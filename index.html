@@ -974,7 +974,7 @@
         <div class="notes-container">
           <div class="notes-title">📝 Theory & Notes:</div>
           <p>The <code>&lt;sup&gt;</code> tag shifts the enclosed text half a character height above the normal text baseline with a reduced font size.</p>
-          <p>It is essential for writing mathematical exponents like $X^2 + Y^2$ as well as ordinal indicators in dates like $1^{st}, 2^{nd}, 8^{th}$.</p>
+          <p>It is essential for writing mathematical exponents like X^2 + Y^2 as well as ordinal indicators in dates like 1^{st}, 2^{nd}, 8^{th}.</p>
           <p>It is an inline container tag that must be properly closed with <code>&lt;/sup&gt;</code>.</p>
         </div>
         <div class="box-label code-label">💻 HTML Code:</div>
@@ -997,7 +997,7 @@
         <div class="notes-container">
           <div class="notes-title">📝 Theory & Notes:</div>
           <p>The <code>&lt;sub&gt;</code> tag lowers the enclosed text half a character height below the standard baseline in a smaller size.</p>
-          <p>It is most frequently used for scientific and chemical formulas like $H_2O, CO_2, H_2SO_4$ and math logarithms like $\log_{10}$.</p>
+          <p>It is most frequently used for scientific and chemical formulas like H2O, CO2, H2SO4 and math logarithms like log{10}.</p>
           <p>It is an inline container tag that must be ended with <code>&lt;/sub&gt;</code>.</p>
         </div>
         <div class="box-label code-label">💻 HTML Code:</div>
@@ -1671,8 +1671,10 @@ Subject: Computer</pre>
   <footer>
     <p class="author-highlight">Complete HTML Notes • Computer Coding</p>
     <p>Prepared by <strong>Pratap Sanjay Sir</strong> | Learn HTML with Simple Examples & Practice</p>
-    <p>© 2026 All Rights Reserved.</p>
-  </footer>
-
+    <p>© <span id="year"></span> All Rights Reserved.</p>
+ </footer>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
