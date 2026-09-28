@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete HTML Notes for Class 8 students with detailed paragraph theory, source code, and live output previews for all 35 tags.">
+  <meta name="keywords" content="HTML Notes,Computer, HTML Tags, HTML Coding, Computer Notes, Pratap Sanjay Sir">
+  <meta name="author" content="Pratap Sanjay Sir">
+
+  <title>Complete HTML Notes </title>
+
+  <style>
+    /* =========================================================
+       BASE & RESET STYLES
+       ========================================================= */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      background: #f1f5f9;
+      color: #1e293b;
+    }
+
+    /* =========================================================
+       HERO HEADER
+       ========================================================= */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%);
+      color: white;
+      padding: 60px 20px 50px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.2);
+    }
+
+    .hero-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 5px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 5vw, 3.4rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 1.12rem;
+      opacity: 0.92;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .hero-pill {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* =========================================================
+       LAYOUT STRUCTURE
+       ========================================================= */
+    .container {
+      width: min(1200px, 94%);
+      margin: 0 auto;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 30px;
+      align-items: start;
+      margin: 35px auto 60px;
+    }
+
+    /* =========================================================
+       STICKY SIDEBAR (TABLE OF CONTENTS)
+       ========================================================= */
+    .toc {
+      position: sticky;
+      top: 20px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      max-height: calc(100vh - 40px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .toc-header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .toc-header-icon {
+      font-size: 1.6rem;
+      line-height: 1;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 8px;
+      border-radius: 10px;
+    }
+
+    .toc-header h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0;
+      color: #ffffff;
+    }
+
+    .toc-header p {
+      font-size: 0.8rem;
+      opacity: 0.85;
+      margin: 0;
+    }
+
+    .toc-list {
+      list-style: none;
+      padding: 12px;
+      margin: 0;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .toc-list::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .toc-list::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 10px;
+    }
+
+    .toc-list a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #475569;
+      text-decoration: none;
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-size: 0.86rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      border-left: 3px solid transparent;
+    }
+
+    .toc-list a:hover {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border-left: 3px solid #2563eb;
+      padding-left: 15px;
+    }
+
+    .toc-list code {
+      background: #f1f5f9;
+      color: #2563eb;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-family: Consolas, monospace;
+    }
+
+    .toc-summary-link {
+      background: #fef3c7 !important;
+      color: #92400e !important;
+      font-weight: 700 !important;
+      margin-top: 8px;
+    }
+
+    /* =========================================================
+       MAIN CONTENT CARDS
+       ========================================================= */
+    main {
+      min-width: 0;
+    }
+
+    .banner-img-wrap {
+      background: white;
+      padding: 10px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      text-align: center;
+    }
+
+    .banner-img-wrap img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .intro-banner {
+      background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 28px;
+      border-left: 6px solid #2563eb;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+      border-top: 1px solid #e2e8f0;
+      border-right: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .intro-banner h2 {
+      color: #1e3a8a;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .intro-banner p {
+      color: #334155;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    .intro-banner p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* SECTION CARD */
+    .section-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 30px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      scroll-margin-top: 25px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .section-card:hover {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 14px;
+    }
+
+    .card-header h2 {
+      color: #1e3a8a;
+      font-size: 1.45rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+    }
+
+    .tag-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .badge-tag {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-family: Consolas, 'Courier New', monospace;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .badge-type {
+      background: #f8fafc;
+      color: #64748b;
+      border: 1px solid #cbd5e1;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* 1. NOTES BOX (Paragraph format) */
+    .notes-container {
+      background: #f8fafc;
+      border-left: 4px solid #3b82f6;
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin-bottom: 20px;
+      border-top: 1px solid #f1f5f9;
+      border-right: 1px solid #f1f5f9;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .notes-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #1e40af;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .notes-container p {
+      color: #334155;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    .notes-container p:last-child {
+      margin-bottom: 0;
+    }
+
+    .notes-container strong {
+      color: #0f172a;
+    }
+
+    /* 2. CODE BOX */
+    .box-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .code-label {
+      color: #475569;
+    }
+
+    .code-block {
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 10px;
+      padding: 16px 20px;
+      overflow-x: auto;
+      font-family: Consolas, 'Courier New', monospace;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      border: 1px solid #1e293b;
+      margin-bottom: 20px;
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    /* 3. OUTPUT BOX */
+    .output-label {
+      color: #16a34a;
+    }
+
+    .output-preview {
+      background: #ffffff;
+      border: 2px dashed #cbd5e1;
+      border-radius: 10px;
+      padding: 22px;
+      min-height: 40px;
+      position: relative;
+    }
+
+    /* Output Element Adjustments */
+    .output-preview h1 { font-size: 1.8rem; color: #0f172a; margin-bottom: 4px; }
+    .output-preview h2 { font-size: 1.5rem; color: #1e293b; margin-bottom: 4px; }
+    .output-preview h3 { font-size: 1.3rem; color: #334155; margin-bottom: 4px; }
+    .output-preview h4 { font-size: 1.15rem; color: #475569; margin-bottom: 4px; }
+    .output-preview h5 { font-size: 1rem; color: #64748b; margin-bottom: 4px; }
+    .output-preview h6 { font-size: 0.88rem; color: #94a3b8; margin-bottom: 4px; }
+
+    .output-preview table {
+      width: 100%;
+      max-width: 520px;
+      border-collapse: collapse;
+      margin-top: 6px;
+    }
+
+    .output-preview th, .output-preview td {
+      border: 1px solid #cbd5e1;
+      padding: 9px 14px;
+      text-align: left;
+    }
+
+    .output-preview th {
+      background: #eff6ff;
+      color: #1e3a8a;
+      font-weight: 700;
+    }
+
+    .output-preview form {
+      display: grid;
+      gap: 12px;
+      max-width: 460px;
+    }
+
+    .output-preview input[type="text"],
+    .output-preview input[type="email"],
+    .output-preview input[type="password"],
+    .output-preview input[type="number"],
+    .output-preview select,
+    .output-preview textarea {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font: inherit;
+    }
+
+    .output-preview button,
+    .output-preview input[type="submit"] {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      width: max-content;
+      transition: background 0.2s;
+    }
+
+    .output-preview button:hover,
+    .output-preview input[type="submit"]:hover {
+      background: #1d4ed8;
+    }
+
+    .custom-marquee-box {
+      overflow: hidden;
+      white-space: nowrap;
+      background: #fef08a;
+      color: #854d0e;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-weight: 700;
+      border: 1px solid #fde047;
+    }
+
+    .custom-marquee-box span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee-anim 12s linear infinite;
+    }
+
+    @keyframes marquee-anim {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      padding: 45px 20px;
+      border-top: 1px solid #1e293b;
+    }
+
+    footer p {
+      margin: 6px 0;
+      font-size: 0.95rem;
+    }
+
+    footer .author-highlight {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    /* =========================================================
+       RESPONSIVE DESIGN
+       ========================================================= */
+    @media (max-width: 950px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      .toc {
+        position: static;
+        max-height: 300px;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================
+       HERO HEADER
+       ========================================================= -->
+  <header class="hero">
+    <div class="container">
+      <span class="hero-badge-top">💻 Computer World</span>
+      <h1>Complete HTML Notes</h1>
+      <p>Master HyperText Markup Language with Paragraph Notes, Pure Source Codes & Live Rendered Outputs for Every Single Tag.</p>
+      <div class="hero-tags">
+        <span class="hero-pill">📖 35 Core Topics</span>
+        <span class="hero-pill">🎯 Exam-Oriented Theory</span>
+        <span class="hero-pill">💡 Interactive Previews</span>
+        <span class="hero-pill">👨‍🏫 Prepared by Pratap Sanjay Sir</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container layout">
+
+    <!-- =========================================================
+         TABLE OF CONTENTS (STICKY SIDEBAR)
+         ========================================================= -->
+    <aside class="toc">
+      <div class="toc-header">
+        <span class="toc-header-icon">📑</span>
+        <div>
+          <h2>All Topics</h2>
+          <p>Quick Navigation Index</p>
+        </div>
+      </div>
+      <ol class="toc-list">
+        <li><a href="#topic-1">1. Heading Tags <code>&lt;h1&gt;–&lt;h6&gt;</code></a></li>
+        <li><a href="#topic-2">2. Paragraph <code>&lt;p&gt;</code></a></li>
+        <li><a href="#topic-3">3. Line Break <code>&lt;br&gt;</code></a></li>
+        <li><a href="#topic-4">4. Horizontal Rule <code>&lt;hr&gt;</code></a></li>
+        <li><a href="#topic-5">5. Bold <code>&lt;b&gt;</code></a></li>
+        <li><a href="#topic-6">6. Italic <code>&lt;i&gt;</code></a></li>
+        <li><a href="#topic-7">7. Underline <code>&lt;u&gt;</code></a></li>
+        <li><a href="#topic-8">8. Strong <code>&lt;strong&gt;</code></a></li>
+        <li><a href="#topic-9">9. Emphasis <code>&lt;em&gt;</code></a></li>
+        <li><a href="#topic-10">10. Highlight <code>&lt;mark&gt;</code></a></li>
+        <li><a href="#topic-11">11. Small Text <code>&lt;small&gt;</code></a></li>
+        <li><a href="#topic-12">12. Strikethrough <code>&lt;del&gt;</code></a></li>
+        <li><a href="#topic-13">13. Inserted Text <code>&lt;ins&gt;</code></a></li>
+        <li><a href="#topic-14">14. Superscript <code>&lt;sup&gt;</code></a></li>
+        <li><a href="#topic-15">15. Subscript <code>&lt;sub&gt;</code></a></li>
+        <li><a href="#topic-16">16. Ordered List <code>&lt;ol&gt;</code></a></li>
+        <li><a href="#topic-17">17. Unordered List <code>&lt;ul&gt;</code></a></li>
+        <li><a href="#topic-18">18. Description List <code>&lt;dl&gt;</code></a></li>
+        <li><a href="#topic-19">19. Anchor / Link <code>&lt;a&gt;</code></a></li>
+        <li><a href="#topic-20">20. Image <code>&lt;img&gt;</code></a></li>
+        <li><a href="#topic-21">21. Division <code>&lt;div&gt;</code></a></li>
+        <li><a href="#topic-22">22. Span <code>&lt;span&gt;</code></a></li>
+        <li><a href="#topic-23">23. Table <code>&lt;table&gt;</code></a></li>
+        <li><a href="#topic-24">24. Form <code>&lt;form&gt;</code></a></li>
+        <li><a href="#topic-25">25. Button <code>&lt;button&gt;</code></a></li>
+        <li><a href="#topic-26">26. Textarea <code>&lt;textarea&gt;</code></a></li>
+        <li><a href="#topic-27">27. Select / Dropdown <code>&lt;select&gt;</code></a></li>
+        <li><a href="#topic-28">28. Checkbox <code>type="checkbox"</code></a></li>
+        <li><a href="#topic-29">29. Radio Button <code>type="radio"</code></a></li>
+        <li><a href="#topic-30">30. HTML Comments <code>&lt;!-- --&gt;</code></a></li>
+        <li><a href="#topic-31">31. Marquee Tag <code>&lt;marquee&gt;</code></a></li>
+        <li><a href="#topic-32">32. Center Tag <code>&lt;center&gt;</code></a></li>
+        <li><a href="#topic-33">33. Preformatted Text <code>&lt;pre&gt;</code></a></li>
+        <li><a href="#topic-34">34. Address Tag <code>&lt;address&gt;</code></a></li>
+        <li><a href="#topic-35" class="toc-summary-link">35. Summary & Practice 🎓</a></li>
+      </ol>
+    </aside>
+
+    <!-- =========================================================
+         MAIN CONTENT AREA
+         ========================================================= -->
+    <main>
+
+      <!-- Banner Image -->
+      <div class="banner-img-wrap">
+        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVfOhptvitH8yUUOYD8ybW1jmFY6jCvVj5trv-9ycJumcK8kTtrHjvnY_8GV7Jgqvhrr3LLmIeDF6MEcvZsduB8sq7RtUOuRdWH0pEMRpbB_MXhRVEFiBxwjzwh7Dqbl5FQRhZ9h1XtvsIy9-lP0ABNS6VVNBNwvZXEVimZ2xh_pVU4Z6cBbpRJvfro7s/s1600/Complete%20HTML%20Notes%20-%20Pratap%20Sanjay%20Sir.png" target="_blank" rel="noopener">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVfOhptvitH8yUUOYD8ybW1jmFY6jCvVj5trv-9ycJumcK8kTtrHjvnY_8GV7Jgqvhrr3LLmIeDF6MEcvZsduB8sq7RtUOuRdWH0pEMRpbB_MXhRVEFiBxwjzwh7Dqbl5FQRhZ9h1XtvsIy9-lP0ABNS6VVNBNwvZXEVimZ2xh_pVU4Z6cBbpRJvfro7s/s1600/Complete%20HTML%20Notes%20-%20Pratap%20Sanjay%20Sir.png" alt="Complete HTML Notes Banner - Pratap Sanjay Sir">
+        </a>
+      </div>
+
+      <!-- Introduction Banner -->
+      <section class="intro-banner">
+        <h2>📘 Introduction to HTML</h2>
+       <p><strong>HTML</strong> stands for <strong>HyperText Markup Language</strong>. It is a <strong>markup language</strong> used to create and structure web pages.</p>
+
+<p><strong>Web Page:</strong> A web page is a document created using HTML and displayed in a <strong>web browser</strong>.</p>
+
+<p><strong>URL</strong> stands for <strong>Uniform Resource Locator</strong>. It is the address used to locate a web page or resource on the Internet.</p>
+
+<p><strong>Father of HTML:</strong> <strong><a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee#External_links">Tim Berners-Lee</a></strong> developed HTML in <strong>1991</strong> and invented the <strong>World Wide Web (WWW)</strong> in <strong>1989</strong>.</p>
+
+<p><strong>HTML Element:</strong> An element generally consists of an <strong>opening tag, content, and closing tag</strong>, such as <code>&lt;p&gt;Hello&lt;/p&gt;</code>.</p>
+
+<p><strong>HTML Tags:</strong> Tags are keywords written inside <strong>angle brackets</strong>, such as <code>&lt;p&gt;</code>.</p>
+
+<p><strong>Types of Tags:</strong> HTML tags are mainly of two types: <strong>Container Tags</strong>, which have opening and closing tags, and <strong>Empty Tags</strong>, which do not require a closing tag.</p>
+
+<p><strong>Examples:</strong> Container Tag – <code>&lt;p&gt;...&lt;/p&gt;</code> | Empty Tag – <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;img&gt;</code></p>
+      </section>
+
+      <!-- 1. HEADING TAGS -->
+      <section class="section-card" id="topic-1">
+        <div class="card-header">
+          <h2>1. Heading Tags</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;h1&gt; to &lt;h6&gt;</span>
+            <span class="badge-type">Container Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>Heading tags are used to define main headings and subheadings on a web page. HTML provides six levels of headings starting from <code>&lt;h1&gt;</code> up to <code>&lt;h6&gt;</code>.</p>
+          <p>The <code>&lt;h1&gt;</code> tag represents the most important and largest heading on the page, whereas <code>&lt;h6&gt;</code> represents the least important and smallest heading.</p>
+          <p>All heading tags are container tags requiring opening and closing tags. Web browsers automatically insert top and bottom margins (blank space) around every heading element.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;h1&gt;Welcome in My Page&lt;/h1&gt;
+&lt;h2&gt;This page is dedicated to Class 8th&lt;/h2&gt;
+&lt;h3&gt;This is Heading 3&lt;/h3&gt;
+&lt;h4&gt;This is Heading 4&lt;/h4&gt;
+&lt;h5&gt;This is Heading 5&lt;/h5&gt;
+&lt;h6&gt;This is Heading 6&lt;/h6&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <h1>Welcome in My Page</h1>
+          <h2>This page is dedicated to Class 8th</h2>
+          <h3>This is Heading 3</h3>
+          <h4>This is Heading 4</h4>
+          <h5>This is Heading 5</h5>
+          <h6>This is Heading 6</h6>
+        </div>
+      </section>
+
+      <!-- 2. PARAGRAPH TAG -->
+      <section class="section-card" id="topic-2">
+        <div class="card-header">
+          <h2>2. Paragraph Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;p&gt;</span>
+            <span class="badge-type">Container Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;p&gt;</code> tag is used to create and structure standard paragraphs of text on a web page.</p>
+          <p>It is a block-level container tag that always begins on a fresh new line. Web browsers automatically add an empty line before and after every paragraph block.</p>
+          <p>Multiple consecutive spaces and line breaks inside the code are collapsed into a single space by the browser when rendered.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;Hello my dear friends, how are you in Computer Room?&lt;/p&gt;
+&lt;p&gt;Now we are starting HTML Coding.&lt;/p&gt;
+&lt;p&gt;HTML stands for HyperText Markup Language. It is used to create the structure of a web page.&lt;/p&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p>Hello my dear friends, how are you in Computer Room?</p>
+          <p>Now we are starting HTML Coding.</p>
+          <p>HTML stands for HyperText Markup Language. It is used to create the structure of a web page.</p>
+        </div>
+      </section>
+
+      <!-- 3. LINE BREAK TAG -->
+      <section class="section-card" id="topic-3">
+        <div class="card-header">
+          <h2>3. Line Break Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;br&gt;</span>
+            <span class="badge-type">Empty / Void Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;br&gt;</code> tag inserts a single line break right at the position where it is placed in the text.</p>
+          <p>Unlike the paragraph tag, it does not create extra top or bottom margins. It simply shifts the upcoming content to the beginning of the next line.</p>
+          <p>It is an <strong>Empty Tag</strong> (Void Tag), which means it does not contain content and never uses a closing tag like <code>&lt;/br&gt;</code>. It is ideal for poems, short addresses, and verses.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;
+  My name is Rahul.&lt;br&gt;
+  I am a student.&lt;br&gt;
+  I am learning HTML.
+&lt;/p&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p>
+            My name is Rahul.<br>
+            I am a student.<br>
+            I am learning HTML.
+          </p>
+        </div>
+      </section>
+
+      <!-- 4. HORIZONTAL RULE TAG -->
+      <section class="section-card" id="topic-4">
+        <div class="card-header">
+          <h2>4. Horizontal Rule Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;hr&gt;</span>
+            <span class="badge-type">Empty / Void Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;hr&gt;</code> tag draws a horizontal dividing line across the width of the webpage.</p>
+          <p>It is used as a visual thematic break between different sections, topics, or paragraphs to keep content neat and organized.</p>
+          <p>Just like <code>&lt;br&gt;</code>, it is an <strong>Empty Tag</strong> that does not require any closing tag.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;This is the first section.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;This is the second section.&lt;/p&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p>This is the first section.</p>
+          <hr style="margin: 12px 0; border: 0; border-top: 1px solid #94a3b8;">
+          <p>This is the second section.</p>
+        </div>
+      </section>
+
+      <!-- 5. BOLD TAG -->
+      <section class="section-card" id="topic-5">
+        <div class="card-header">
+          <h2>5. Bold Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;b&gt;</span>
+            <span class="badge-type">Container / Inline Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;b&gt;</code> tag renders the enclosed text in <strong>bold font</strong>, making it appear darker and thicker than normal text.</p>
+          <p>It is purely a visual formatting tag and does not add semantic or special linguistic importance to the text.</p>
+          <p>It is an inline container tag that must always be properly closed with <code>&lt;/b&gt;</code>.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;&lt;b&gt;This is Bold Text&lt;/b&gt;&lt;/p&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p><b>This is Bold Text</b></p>
+        </div>
+      </section>
+
+      <!-- 6. ITALIC TAG -->
+      <section class="section-card" id="topic-6">
+        <div class="card-header">
+          <h2>6. Italic Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;i&gt;</span>
+            <span class="badge-type">Container / Inline Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;i&gt;</code> tag displays text in <em>italic</em> (slanted) font style.</p>
+          <p>It is typically used for technical terms, foreign expressions, book or movie titles, and creative writing phrases.</p>
+          <p>It is an inline container element that is closed with <code>&lt;/i&gt;</code>.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;&lt;i&gt;This is Italic Text&lt;/i&gt;&lt;/p&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p><i>This is Italic Text</i></p>
+        </div>
+      </section>
+
+      <!-- 7. UNDERLINE TAG -->
+      <section class="section-card" id="topic-7">
+        <div class="card-header">
+          <h2>7. Underline Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;u&gt;</span>
+            <span class="badge-type">Container / Inline Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;u&gt;</code> tag places a continuous straight underline under the enclosed words or sentences.</p>
+          <p>It is commonly used to draw attention to key points, definitions, or grammatical errors in study notes.</p>
+          <p>Because hyperlinks are also underlined by default, use <code>&lt;u&gt;</code> carefully to avoid confusing readers.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;&lt;u&gt;This is Underlined Text&lt;/u&gt;&lt;/p&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p><u>This is Underlined Text</u></p>
+        </div>
+      </section>
+
+      <!-- 8. STRONG TAG -->
+      <section class="section-card" id="topic-8">
+        <div class="card-header">
+          <h2>8. Strong Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;strong&gt;</span>
+            <span class="badge-type">Semantic Container Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;strong&gt;</code> tag indicates that the enclosed text has high semantic importance, seriousness, or urgency.</p>
+          <p>While standard browsers display strong text in bold font just like <code>&lt;b&gt;</code>, <code>&lt;strong&gt;</code> gives meaningful information to search engines and screen readers.</p>
+          <p>Screen-reading software reads out text inside <code>&lt;strong&gt;</code> tags with increased vocal emphasis.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;&lt;strong&gt;This is Important Text&lt;/strong&gt;&lt;/p&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p><strong>This is Important Text</strong></p>
+        </div>
+      </section>
+
+      <!-- 9. EMPHASIS TAG -->
+      <section class="section-card" id="topic-9">
+        <div class="card-header">
+          <h2>9. Emphasis Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;em&gt;</span>
+            <span class="badge-type">Semantic Container Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;em&gt;</code> tag is used to give stressed grammatical emphasis to a specific word or phrase inside a sentence.</p>
+          <p>Visually, web browsers render emphasized text in italic style. However, it carries true semantic meaning compared to the simple styling tag <code>&lt;i&gt;</code>.</p>
+          <p>It is an inline container tag and must always end with a closing <code>&lt;/em&gt;</code> tag.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;&lt;em&gt;This text is emphasized.&lt;/em&gt;&lt;/p&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p><em>This text is emphasized.</em></p>
+        </div>
+      </section>
+
+      <!-- 10. MARK TAG -->
+      <section class="section-card" id="topic-10">
+        <div class="card-header">
+          <h2>10. Mark / Highlight Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;mark&gt;</span>
+            <span class="badge-type">Container / Inline Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;mark&gt;</code> tag highlights the enclosed text with a bright yellow background color by default.</p>
+          <p>It works just like a physical fluorescent highlighter pen used in school notebooks to mark key phrases, exam answers, or search keywords.</p>
+          <p>It is an inline tag and must be closed using <code>&lt;/mark&gt;</code>.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;This is &lt;mark&gt;Highlighted Text&lt;/mark&gt;.&lt;/p&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p>This is <mark>Highlighted Text</mark>.</p>
+        </div>
+      </section>
+
+      <!-- 11. SMALL TAG -->
+      <section class="section-card" id="topic-11">
+        <div class="card-header">
+          <h2>11. Small Text Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;small&gt;</span>
+            <span class="badge-type">Container / Inline Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;small&gt;</code> tag renders the enclosed text one size smaller than the surrounding default text size.</p>
+          <p>It is widely used for secondary information such as copyright notices, disclaimers, terms and conditions, and fine print footnotes.</p>
+          <p>It is an inline container element closed with <code>&lt;/small&gt;</code>.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;Normal Text &lt;small&gt;This is Small Text&lt;/small&gt;&lt;/p&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p>Normal Text <small>This is Small Text</small></p>
+        </div>
+      </section>
+
+      <!-- 12. DEL TAG -->
+      <section class="section-card" id="topic-12">
+        <div class="card-header">
+          <h2>12. Deleted Text Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;del&gt;</span>
+            <span class="badge-type">Container / Inline Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;del&gt;</code> tag indicates text that has been removed or deleted from a web document.</p>
+          <p>Browsers display deleted text with a horizontal line struck right through the center (strikethrough effect).</p>
+          <p>It is very popular on e-commerce shopping websites to showcase original product prices before a discount.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;Old Price: &lt;del&gt;₹500&lt;/del&gt;&lt;/p&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p>Old Price: <del>₹500</del></p>
+        </div>
+      </section>
+
+      <!-- 13. INS TAG -->
+      <section class="section-card" id="topic-13">
+        <div class="card-header">
+          <h2>13. Inserted Text Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;ins&gt;</span>
+            <span class="badge-type">Container / Inline Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;ins&gt;</code> tag indicates newly added or inserted text in an updated document.</p>
+          <p>Web browsers render inserted text with an underline to show that it replaces older content.</p>
+          <p>It is commonly used together with <code>&lt;del&gt;</code> to clearly display price cuts and document revisions.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;New Price: &lt;ins&gt;₹400&lt;/ins&gt;&lt;/p&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p>New Price: <ins>₹400</ins></p>
+        </div>
+      </section>
+
+      <!-- 14. SUPERSCRIPT TAG -->
+      <section class="section-card" id="topic-14">
+        <div class="card-header">
+          <h2>14. Superscript Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;sup&gt;</span>
+            <span class="badge-type">Container / Inline Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;sup&gt;</code> tag shifts the enclosed text half a character height above the normal text baseline with a reduced font size.</p>
+          <p>It is essential for writing mathematical exponents like $X^2 + Y^2$ as well as ordinal indicators in dates like $1^{st}, 2^{nd}, 8^{th}$.</p>
+          <p>It is an inline container tag that must be properly closed with <code>&lt;/sup&gt;</code>.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;Example: X&lt;sup&gt;2&lt;/sup&gt; + Y&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p>Example: X<sup>2</sup> + Y<sup>2</sup></p>
+        </div>
+      </section>
+
+      <!-- 15. SUBSCRIPT TAG -->
+      <section class="section-card" id="topic-15">
+        <div class="card-header">
+          <h2>15. Subscript Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;sub&gt;</span>
+            <span class="badge-type">Container / Inline Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;sub&gt;</code> tag lowers the enclosed text half a character height below the standard baseline in a smaller size.</p>
+          <p>It is most frequently used for scientific and chemical formulas like $H_2O, CO_2, H_2SO_4$ and math logarithms like $\log_{10}$.</p>
+          <p>It is an inline container tag that must be ended with <code>&lt;/sub&gt;</code>.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;Example: H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p>Example: H<sub>2</sub>O</p>
+        </div>
+      </section>
+
+      <!-- 16. ORDERED LIST -->
+      <section class="section-card" id="topic-16">
+        <div class="card-header">
+          <h2>16. Ordered List</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;ol&gt;, &lt;li&gt;</span>
+            <span class="badge-type">List Container</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>An <strong>Ordered List</strong> created with the <code>&lt;ol&gt;</code> tag is used when the sequence or order of items is important.</p>
+          <p>Each list item inside the parent list is wrapped within a <code>&lt;li&gt;</code> (List Item) tag.</p>
+          <p>By default, web browsers automatically number the items using standard Arabic numerals (1, 2, 3, etc.).</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;&lt;b&gt;Which class do you read?&lt;/b&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Class - 7&lt;/li&gt;
+  &lt;li&gt;Class - 8&lt;/li&gt;
+  &lt;li&gt;Class - 9&lt;/li&gt;
+  &lt;li&gt;Class - 10&lt;/li&gt;
+&lt;/ol&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p><b>Which class do you read?</b></p>
+          <ol style="margin-left: 24px; margin-top: 8px;">
+            <li>Class - 7</li>
+            <li>Class - 8</li>
+            <li>Class - 9</li>
+            <li>Class - 10</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 17. UNORDERED LIST -->
+      <section class="section-card" id="topic-17">
+        <div class="card-header">
+          <h2>17. Unordered List</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;ul&gt;, &lt;li&gt;</span>
+            <span class="badge-type">List Container</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>An <strong>Unordered List</strong> created with the <code>&lt;ul&gt;</code> tag produces a bulleted list where item order does not matter.</p>
+          <p>Just like ordered lists, every item inside the list is defined using the <code>&lt;li&gt;</code> tag.</p>
+          <p>By default, browsers display solid black circular bullets (disc shape) next to each item.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;&lt;b&gt;My Favourite Subjects&lt;/b&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Computer&lt;/li&gt;
+  &lt;li&gt;Mathematics&lt;/li&gt;
+  &lt;li&gt;Science&lt;/li&gt;
+  &lt;li&gt;English&lt;/li&gt;
+&lt;/ul&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p><b>My Favourite Subjects</b></p>
+          <ul style="margin-left: 24px; margin-top: 8px;">
+            <li>Computer</li>
+            <li>Mathematics</li>
+            <li>Science</li>
+            <li>English</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 18. DESCRIPTION LIST -->
+      <section class="section-card" id="topic-18">
+        <div class="card-header">
+          <h2>18. Description List</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;</span>
+            <span class="badge-type">Definition List</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>A <strong>Description List</strong> (<code>&lt;dl&gt;</code>) organizes terms alongside their corresponding definitions or explanations.</p>
+          <p>The <code>&lt;dt&gt;</code> tag defines the term/title, while the <code>&lt;dd&gt;</code> tag provides the indented description data.</p>
+          <p>This structure is perfect for glossaries, dictionaries, and key term summaries in school notes.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;&lt;b&gt;Computer Terms&lt;/b&gt;&lt;/p&gt;
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+  &lt;dt&gt;WWW&lt;/dt&gt;
+  &lt;dd&gt;World Wide Web&lt;/dd&gt;
+&lt;/dl&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p><b>Computer Terms</b></p>
+          <dl style="margin-left: 10px; margin-top: 8px;">
+            <dt style="font-weight: bold; color: #1e3a8a; margin-top: 6px;">HTML</dt>
+            <dd style="margin-left: 16px;">HyperText Markup Language</dd>
+            <dt style="font-weight: bold; color: #1e3a8a; margin-top: 6px;">CSS</dt>
+            <dd style="margin-left: 16px;">Cascading Style Sheets</dd>
+            <dt style="font-weight: bold; color: #1e3a8a; margin-top: 6px;">WWW</dt>
+            <dd style="margin-left: 16px;">World Wide Web</dd>
+          </dl>
+        </div>
+      </section>
+
+      <!-- 19. ANCHOR / LINK TAG -->
+      <section class="section-card" id="topic-19">
+        <div class="card-header">
+          <h2>19. Anchor / Link Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;a href="..."&gt;</span>
+            <span class="badge-type">Hyperlink Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;a&gt;</code> (Anchor) tag creates clickable hyperlinks connecting to other webpages, files, or external websites.</p>
+          <p>Its mandatory attribute is <code>href</code> (Hypertext Reference), which holds the destination target URL address.</p>
+          <p>Adding the optional attribute <code>target="_blank"</code> instructs the browser to open the link in a fresh new tab.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;&lt;b&gt;Visit Google:&lt;/b&gt;&lt;/p&gt;
+&lt;a href="https://www.google.com" target="_blank"&gt;
+  Click Here to Visit Google
+&lt;/a&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p><b>Visit Google:</b></p>
+          <a href="https://www.google.com" target="_blank" rel="noopener" style="color: #2563eb; font-weight: bold; text-decoration: underline;">Click Here to Visit Google</a>
+        </div>
+      </section>
+
+      <!-- 20. IMAGE TAG -->
+      <section class="section-card" id="topic-20">
+        <div class="card-header">
+          <h2>20. Image Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;img src="..."&gt;</span>
+            <span class="badge-type">Empty Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;img&gt;</code> tag is an empty void tag used to embed images and graphics directly into a webpage.</p>
+          <p>Key attributes include <code>src</code> (image file source/path), <code>alt</code> (alternative text shown if loading fails), and <code>width</code> / <code>height</code> to specify pixel dimensions.</p>
+          <p>Since it is an empty tag, it does not have a closing tag.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;&lt;b&gt;My Image&lt;/b&gt;&lt;/p&gt;
+&lt;img src="image.jpg" alt="My Image" width="300"&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p><b>My Image</b></p>
+          <svg width="300" height="140" viewBox="0 0 300 140" style="border-radius: 8px; margin-top: 8px; border: 1px solid #cbd5e1; background: #e2e8f0; display: block;">
+            <rect width="300" height="140" fill="#e2e8f0"/>
+            <circle cx="60" cy="45" r="18" fill="#3b82f6" opacity="0.8"/>
+            <polygon points="20,120 100,55 170,120" fill="#93c5fd"/>
+            <polygon points="120,120 190,75 265,120" fill="#60a5fa"/>
+            <text x="150" y="132" font-family="Arial" font-size="11" fill="#475569" text-anchor="middle">Rendered Image: image.jpg (width: 300px)</text>
+          </svg>
+        </div>
+      </section>
+
+      <!-- 21. DIVISION TAG -->
+      <section class="section-card" id="topic-21">
+        <div class="card-header">
+          <h2>21. Division Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;div&gt;</span>
+            <span class="badge-type">Block-level Container</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;div&gt;</code> (division) tag is a generic block-level container element used to group together larger sections of HTML.</p>
+          <p>It occupies the full width of its parent element and always starts on a fresh new line.</p>
+          <p>It is primarily used as a styling and layout container with CSS to structure modern webpage designs.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;div style="background:#e0f2fe; padding:15px; border-radius:8px;"&gt;
+  &lt;h2&gt;About My School&lt;/h2&gt;
+  &lt;p&gt;My school is a beautiful place where I learn new things every day.&lt;/p&gt;
+&lt;/div&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <div style="background:#e0f2fe; padding:15px; border-radius:8px; border: 1px solid #bae6fd;">
+            <h3 style="color:#0369a1; margin-bottom:5px;">About My School</h3>
+            <p style="color:#0c4a6e;">My school is a beautiful place where I learn new things every day.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 22. SPAN TAG -->
+      <section class="section-card" id="topic-22">
+        <div class="card-header">
+          <h2>22. Span Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;span&gt;</span>
+            <span class="badge-type">Inline Container</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;span&gt;</code> tag is a generic inline container used to style or manipulate a specific small portion of text within a line.</p>
+          <p>Unlike <code>&lt;div&gt;</code>, it does not force a new line and takes up only as much width as its content requires.</p>
+          <p>It is commonly paired with CSS to colorize or highlight individual words in a paragraph.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;p&gt;
+  My favourite colour is &lt;span style="color:blue; font-weight:bold;"&gt;Blue&lt;/span&gt;.
+&lt;/p&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p>My favourite colour is <span style="color: blue; font-weight: bold;">Blue</span>.</p>
+        </div>
+      </section>
+
+      <!-- 23. TABLE TAG -->
+      <section class="section-card" id="topic-23">
+        <div class="card-header">
+          <h2>23. Table Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;</span>
+            <span class="badge-type">Tabular Grid</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>Tables organize structured data into an intuitive grid made of rows and columns.</p>
+          <p>The <code>&lt;table&gt;</code> tag encloses the entire table. The <code>&lt;tr&gt;</code> tag creates horizontal rows, <code>&lt;th&gt;</code> creates bold centered header cells, and <code>&lt;td&gt;</code> creates standard data cells.</p>
+          <p>Use the <code>border</code> attribute on the table tag to define visible outline borders around cells.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;h2&gt;Student Details&lt;/h2&gt;
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Class&lt;/th&gt;
+    &lt;th&gt;Roll No.&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Rahul&lt;/td&gt;
+    &lt;td&gt;8&lt;/td&gt;
+    &lt;td&gt;01&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Aman&lt;/td&gt;
+    &lt;td&gt;8&lt;/td&gt;
+    &lt;td&gt;02&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Priya&lt;/td&gt;
+    &lt;td&gt;8&lt;/td&gt;
+    &lt;td&gt;03&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <h3 style="margin-bottom: 8px;">Student Details</h3>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Class</th>
+              <th>Roll No.</th>
+            </tr>
+            <tr>
+              <td>Rahul</td>
+              <td>8</td>
+              <td>01</td>
+            </tr>
+            <tr>
+              <td>Aman</td>
+              <td>8</td>
+              <td>02</td>
+            </tr>
+            <tr>
+              <td>Priya</td>
+              <td>8</td>
+              <td>03</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- 24. FORM TAG -->
+      <section class="section-card" id="topic-24">
+        <div class="card-header">
+          <h2>24. Form Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;form&gt;, &lt;input&gt;</span>
+            <span class="badge-type">User Input Form</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;form&gt;</code> tag creates an interactive web form to collect user inputs and send them to a server.</p>
+          <p>The versatile <code>&lt;input&gt;</code> tag creates different input fields based on its <code>type</code> attribute (text, email, password, number, submit).</p>
+          <p>The <code>placeholder</code> attribute shows helpful sample hint text inside the field before the user begins typing.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;h2&gt;Student Registration Form&lt;/h2&gt;
+&lt;form&gt;
+  &lt;label&gt;Name:&lt;/label&gt;
+  &lt;input type="text" placeholder="Enter your name"&gt;
+
+  &lt;label&gt;Email:&lt;/label&gt;
+  &lt;input type="email" placeholder="Enter your email"&gt;
+
+  &lt;label&gt;Password:&lt;/label&gt;
+  &lt;input type="password" placeholder="Enter password"&gt;
+
+  &lt;label&gt;Age:&lt;/label&gt;
+  &lt;input type="number" placeholder="Enter age"&gt;
+
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <h3 style="margin-bottom: 12px;">Student Registration Form</h3>
+          <form onsubmit="event.preventDefault(); alert('Form submitted successfully!');">
+            <label><strong>Name:</strong></label>
+            <input type="text" placeholder="Enter your name">
+
+            <label><strong>Email:</strong></label>
+            <input type="email" placeholder="Enter your email">
+
+            <label><strong>Password:</strong></label>
+            <input type="password" placeholder="Enter password">
+
+            <label><strong>Age:</strong></label>
+            <input type="number" placeholder="Enter age">
+
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </section>
+
+      <!-- 25. BUTTON TAG -->
+      <section class="section-card" id="topic-25">
+        <div class="card-header">
+          <h2>25. Button Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;button&gt;</span>
+            <span class="badge-type">Interactive Control</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;button&gt;</code> tag creates a clickable push button control on a web page.</p>
+          <p>It can contain text, icons, or images inside its opening and closing tags.</p>
+          <p>It is commonly linked to JavaScript event listeners (like <code>onclick</code>) to execute interactive scripts or display alert popup messages.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;button onclick="alert('Hello Class 8!')"&gt;
+  Click Me
+&lt;/button&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <button onclick="alert('Hello Class 8 Student! Keep practicing HTML!')">Click Me</button>
+        </div>
+      </section>
+
+      <!-- 26. TEXTAREA TAG -->
+      <section class="section-card" id="topic-26">
+        <div class="card-header">
+          <h2>26. Textarea Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;textarea&gt;</span>
+            <span class="badge-type">Multi-line Input</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;textarea&gt;</code> tag allows users to enter multiple lines of text, unlike standard single-line text inputs.</p>
+          <p>It is ideal for collecting postal addresses, user feedback, reviews, and long descriptive messages.</p>
+          <p>You can set its initial visible height and width using the <code>rows</code> and <code>cols</code> attributes.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;h2&gt;Write Your Message&lt;/h2&gt;
+&lt;textarea rows="5" cols="40"&gt;
+Write your message here...
+&lt;/textarea&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <h3 style="margin-bottom: 8px;">Write Your Message</h3>
+          <textarea rows="4" style="max-width: 450px;">Write your message here...</textarea>
+        </div>
+      </section>
+
+      <!-- 27. SELECT / DROPDOWN TAG -->
+      <section class="section-card" id="topic-27">
+        <div class="card-header">
+          <h2>27. Select / Dropdown Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;select&gt;, &lt;option&gt;</span>
+            <span class="badge-type">Dropdown Menu</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;select&gt;</code> tag creates a compact drop-down list menu for users to choose from.</p>
+          <p>Each individual choice option within the drop-down menu is defined using the <code>&lt;option&gt;</code> tag.</p>
+          <p>Adding the <code>selected</code> attribute to an option sets it as the default visible choice on page load.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;h2&gt;Select Your Class&lt;/h2&gt;
+&lt;select&gt;
+  &lt;option&gt;Class 6&lt;/option&gt;
+  &lt;option&gt;Class 7&lt;/option&gt;
+  &lt;option selected&gt;Class 8&lt;/option&gt;
+  &lt;option&gt;Class 9&lt;/option&gt;
+  &lt;option&gt;Class 10&lt;/option&gt;
+&lt;/select&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <h3 style="margin-bottom: 8px;">Select Your Class</h3>
+          <select style="max-width: 250px;">
+            <option>Class 6</option>
+            <option>Class 7</option>
+            <option selected>Class 8</option>
+            <option>Class 9</option>
+            <option>Class 10</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- 28. CHECKBOX CONTROL -->
+      <section class="section-card" id="topic-28">
+        <div class="card-header">
+          <h2>28. Checkbox Control</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;input type="checkbox"&gt;</span>
+            <span class="badge-type">Multiple Choice Input</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>Checkboxes created with <code>&lt;input type="checkbox"&gt;</code> allow users to select multiple options simultaneously from a given list.</p>
+          <p>A user may check zero, one, or several boxes independently without affecting other options.</p>
+          <p>Use the <code>checked</code> attribute to make an option selected by default when the form loads.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;h2&gt;Select Your Hobbies&lt;/h2&gt;
+&lt;label&gt;&lt;input type="checkbox" checked&gt; Reading&lt;/label&gt;
+&lt;label&gt;&lt;input type="checkbox"&gt; Playing&lt;/label&gt;
+&lt;label&gt;&lt;input type="checkbox"&gt; Drawing&lt;/label&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <h3 style="margin-bottom: 8px;">Select Your Hobbies</h3>
+          <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <label><input type="checkbox" checked> Reading</label>
+            <label><input type="checkbox"> Playing</label>
+            <label><input type="checkbox"> Drawing</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- 29. RADIO BUTTON -->
+      <section class="section-card" id="topic-29">
+        <div class="card-header">
+          <h2>29. Radio Button</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;input type="radio"&gt;</span>
+            <span class="badge-type">Single Choice Input</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>Radio buttons created with <code>&lt;input type="radio"&gt;</code> permit users to choose only <strong>one option</strong> from a mutually exclusive group.</p>
+          <p><strong>Crucial Rule:</strong> All radio button options belonging to the same group must share the <strong>exact same <code>name</code> attribute</strong> to link them together properly.</p>
+          <p>Selecting one radio option automatically deselects any previously selected radio option in the same group.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;h2&gt;Select Your Gender&lt;/h2&gt;
+&lt;label&gt;&lt;input type="radio" name="gender" value="male" checked&gt; Male&lt;/label&gt;
+&lt;label&gt;&lt;input type="radio" name="gender" value="female"&gt; Female&lt;/label&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <h3 style="margin-bottom: 8px;">Select Your Gender</h3>
+          <div style="display: flex; gap: 18px;">
+            <label><input type="radio" name="demo_gender_group" value="male" checked> Male</label>
+            <label><input type="radio" name="demo_gender_group" value="female"> Female</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- 30. HTML COMMENT -->
+      <section class="section-card" id="topic-30">
+        <div class="card-header">
+          <h2>30. HTML Comment</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;!-- Comment --&gt;</span>
+            <span class="badge-type">Code Documentation</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>HTML comments are completely ignored by the web browser and are never rendered on the visible web page.</p>
+          <p>They are used by coders to write explanatory notes, documentation, and reminders inside the source code.</p>
+          <p>Comment syntax starts with <code>&lt;!--</code> and concludes with <code>--&gt;</code>.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;!-- 
+  This is an HTML Comment.
+  Comments are not displayed on the web page.
+  They are used to write notes or explanations inside HTML code.
+--&gt;
+&lt;p&gt;Visible text on the webpage.&lt;/p&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <p>Visible text on the webpage. <em style="color:#64748b;">(The comment written above remains invisible on the page.)</em></p>
+        </div>
+      </section>
+
+      <!-- 31. MARQUEE TAG -->
+      <section class="section-card" id="topic-31">
+        <div class="card-header">
+          <h2>31. Marquee Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;marquee&gt;</span>
+            <span class="badge-type">Scrolling Text</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;marquee&gt;</code> tag creates horizontally or vertically scrolling text banners across the screen.</p>
+          <p>It is traditionally taught in school curriculums for demonstrating moving announcement tickers.</p>
+          <p>In modern web development, smooth CSS animations are preferred over the obsolete marquee tag for better performance.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;marquee&gt;
+  Welcome to My HTML Page
+&lt;/marquee&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <div class="custom-marquee-box">
+            <span>Welcome to My HTML Page</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 32. CENTER TAG -->
+      <section class="section-card" id="topic-32">
+        <div class="card-header">
+          <h2>32. Center Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;center&gt;</span>
+            <span class="badge-type">Alignment Tag</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;center&gt;</code> tag aligns text and contained elements horizontally in the middle of the webpage.</p>
+          <p>It is a container tag that centers everything wrapped inside it.</p>
+          <p>In modern web standards, CSS rules like <code>text-align: center;</code> are used instead of the center tag.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;center&gt;
+  &lt;h2&gt;Welcome Students&lt;/h2&gt;
+&lt;/center&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <div style="text-align: center;">
+            <h2 style="color: #1e3a8a;">Welcome Students</h2>
+          </div>
+        </div>
+      </section>
+
+      <!-- 33. PREFORMATTED TEXT TAG -->
+      <section class="section-card" id="topic-33">
+        <div class="card-header">
+          <h2>33. Preformatted Text Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;pre&gt;</span>
+            <span class="badge-type">Monospace Container</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;pre&gt;</code> tag displays preformatted text, preserving both extra white spaces and exact line breaks typed in the code.</p>
+          <p>Browsers render text inside <code>&lt;pre&gt;</code> using a fixed-width monospace font like Courier or Consolas.</p>
+          <p>It is perfect for displaying formatted poems, source code snippets, and ASCII art diagrams.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;pre&gt;
+Name   : Rahul
+Class  : 8
+Subject: Computer
+&lt;/pre&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <pre style="background: #f1f5f9; padding: 12px; border-radius: 6px; font-family: Consolas, monospace; color: #1e293b; line-height: 1.4;">Name   : Rahul
+Class  : 8
+Subject: Computer</pre>
+        </div>
+      </section>
+
+      <!-- 34. ADDRESS TAG -->
+      <section class="section-card" id="topic-34">
+        <div class="card-header">
+          <h2>34. Address Tag</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">&lt;address&gt;</span>
+            <span class="badge-type">Contact Information</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Theory & Notes:</div>
+          <p>The <code>&lt;address&gt;</code> tag is used to specify contact details for the author, creator, or organization of a web page.</p>
+          <p>Browsers automatically display the enclosed text in italic font and place line breaks before and after the block.</p>
+          <p>It can include email addresses, physical addresses, telephone numbers, and author names.</p>
+        </div>
+        <div class="box-label code-label">💻 HTML Code:</div>
+        <div class="code-block">&lt;address&gt;
+  Written by: Rahul&lt;br&gt;
+  Class: 8th&lt;br&gt;
+  School: My School
+&lt;/address&gt;</div>
+        <div class="box-label output-label">🌐 Output Preview:</div>
+        <div class="output-preview">
+          <address style="font-style: italic; color: #334155; line-height: 1.6; border-left: 3px solid #2563eb; padding-left: 12px;">
+            Written by: Rahul<br>
+            Class: 8th<br>
+            School: My School
+          </address>
+        </div>
+      </section>
+
+      <!-- 35. FINAL MESSAGE & PRACTICE -->
+      <section class="section-card" id="topic-35">
+        <div class="card-header">
+          <h2>35. Final Summary & Practice</h2>
+          <div class="tag-badges">
+            <span class="badge-tag">🎓 Revision Box</span>
+          </div>
+        </div>
+        <div class="notes-container">
+          <div class="notes-title">📝 Class 8 Exam Summary Checklist:</div>
+          <p><strong>Container Tags</strong> require both an opening and a closing tag (for example: <code>&lt;html&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;table&gt;</code>).</p>
+          <p><strong>Empty Tags</strong> (or Void Tags) do not take content and do not require closing tags (for example: <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;input&gt;</code>).</p>
+          <p><strong>File Extension:</strong> Always save your HTML files with the <code>.html</code> or <code>.htm</code> extension to open and view them inside any web browser.</p>
+        </div>
+        <div class="box-label output-label">🎉 Message for Students:</div>
+        <div class="output-preview" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border-color: #93c5fd;">
+          <h3 style="color: #1e3a8a; margin-bottom: 8px;">Congratulations! 🚀</h3>
+          <p>You have completed all 35 basic HTML tags and structure concepts for Class 8 Computer Studies.</p>
+          <p style="margin-top: 8px; font-weight: 700; color: #2563eb;">Keep practising HTML coding daily in Notepad and testing it in your browser! 💻✨</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer>
+    <p class="author-highlight">Complete HTML Notes • Computer Coding</p>
+    <p>Prepared by <strong>Pratap Sanjay Sir</strong> | Learn HTML with Simple Examples & Practice</p>
+    <p>© 2026 All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
